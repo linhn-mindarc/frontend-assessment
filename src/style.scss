@@ -1,0 +1,41 @@
+@use './styles/navigation';
+@use './styles/home';
+@use './styles/exercise1';
+@use './styles/exercise2';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.exercise-page {
+  @apply min-h-screen bg-gray-50;
+
+  .container{
+    @apply px-4 mx-auto my-0 max-w-[1092px];
+  }
+}
+
+/* Layout Responsive Utilities */
+.layout--desktop-only {
+  @apply block;
+}
+
+.layout--mobile-only {
+  @apply hidden;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .exercise-page {
+    .container{ 
+      @apply px-[24px];
+    }
+  }
+  
+  .layout--desktop-only {
+    @apply hidden;
+  }
+  
+  .layout--mobile-only {
+    @apply block;
+  }
+}

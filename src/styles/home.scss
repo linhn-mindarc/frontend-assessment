@@ -1,0 +1,73 @@
+/* Home Component Styles */
+.exercise-cards {
+  @apply grid grid-cols-2 gap-6 justify-center;
+}
+
+.exercise-card {
+  @apply flex flex-col justify-between bg-white rounded-2xl p-8 no-underline text-inherit shadow-xl transition-all duration-300 relative overflow-hidden;
+
+  &:hover {
+    @apply transform -translate-y-2 shadow-2xl;
+  }
+
+  &__header {
+    @apply flex justify-between items-center mb-5;
+  }
+
+	&__title {
+		@apply text-primary-600 text-lg m-0 font-semibold;
+	}
+
+	&__number {
+		@apply text-5xl font-bold text-primary-100 leading-none;
+	}
+
+	&__content h3 {
+		@apply text-2xl mb-4 text-gray-800;
+	}
+
+	&__description {
+		@apply text-gray-600 leading-relaxed mb-5 text-left;
+	}
+
+	&__requirements {
+		@apply text-left m-0 p-0 list-none;
+		li {
+			@apply relative pl-6 mb-2 text-gray-700;
+			&::before {
+				content: '✓';
+				@apply absolute left-0 text-green-600 font-bold;
+			}
+		}
+	}
+
+  &__footer {
+    @apply mt-6 pt-5 border-t border-gray-200;
+  }
+
+  &__button {
+    @apply text-primary-600 font-semibold text-lg;
+    &:hover {
+      @apply text-primary-800;
+    }
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .home-page h1 {
+    @apply text-4xl;
+  }
+  
+  .exercise-cards {
+    @apply grid-cols-1 gap-5;
+  }
+  
+  .exercise-card {
+    @apply p-6;
+
+    &__number {
+      @apply text-3xl;
+    }
+  }
+}

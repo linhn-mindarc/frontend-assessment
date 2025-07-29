@@ -1,40 +1,85 @@
-Introduction
----
-Thanks for taking the time to complete this frontend technical assessment. We will be focusing on software quality (scalability, readability, maintainability, etc.) and your eye for detail. You may include any libraries, but Vue.js is preferred and jQuery is not recommended. Along with following best practices, bonus points for following our [coding guidelines](https://github.com/mindarc/frontend-assessment/wiki/Coding-guidelines). 
+# Frontend Assessment - Completed
 
-Exercise 1
----
-Build a responsive page based on the designs.
+A responsive web application built with Vue.js and Tailwind CSS, featuring two main exercises demonstrating modern frontend development practices.
 
-##### Requirements
-1. Match the designs exactly.
-2. Needs to be responsive.
+## Live Demo
 
-##### Designs
-* exercise1-desktop.png
-* exercise1-mobile.png
+- **Exercise 1**: [https://linhnguyen-dl8.pages.dev/exercise1](https://linhnguyen-dl8.pages.dev/exercise1)
+- **Exercise 2 & Bonus**: [https://linhnguyen-dl8.pages.dev/exercise2](https://linhnguyen-dl8.pages.dev/exercise2)
 
-##### Assets
-* Desktop banner - https://via.placeholder.com/1920x650
-* Mobile banner - https://via.placeholder.com/600x600
-* Content images - https://via.placeholder.com/400x300
+## Exercises Overview
 
-Exercise 2
----
-Read the `data.json` file and display the data as tabs on desktop and an accordion on mobile.
+### Exercise 1
+A pixel-perfect responsive page implementation based on provided designs.
 
-##### Requirements
-1. Display data in tabs on desktop.
-2. Display data in an accordion on mobile.
-3. Only 1 accordion/tab should be open at a time.
-4. Open the first accordion/tab on load.
-5. If the open accordion is selected, close it.
+**Features:**
+- ✅ Exact design match
+- ✅ Fully responsive layout
+- ✅ Desktop and mobile optimized
+- ✅ Modern CSS Grid and Flexbox
 
-###### Bonus points
-* Improve the user experience with meaningful animations/transitions.
-* Design and styling.
-* Explain why the result of `('b' + 'a' + + 'a' + 'a').toLowerCase()` is `banana`.
+### Exercise 2
+Dynamic data display with responsive behavior using `data.json`.
 
-Submission
----
-We recommend submitting your completed assessment as a forked repository. Please replace README content with instructions and relevant documentation.
+**Features:**
+- ✅ Desktop tabs interface
+- ✅ Mobile accordion interface
+- ✅ Single active item at a time
+- ✅ First item opens on load
+- ✅ Toggle functionality (close if already open)
+- ✅ Smooth animations and transitions
+- ✅ Enhanced UX design
+
+## Installation & Setup
+
+### Prerequisites
+- Node.js (v16 or higher)
+- npm or yarn
+
+### Quick Start
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+## Tech Stack
+
+- **Framework**: Vue.js 3 (Composition API)
+- **Styling**: Tailwind CSS + SCSS
+- **Build Tool**: Vite
+- **Deployment**: Cloudflare Pages
+
+## Key Features
+
+- **Responsive Design**: Mobile-first approach with breakpoint optimization
+- **Component Architecture**: Modular, reusable Vue components
+- **Smooth Animations**: CSS transitions and Vue transitions
+- **Accessibility**: Semantic HTML and keyboard navigation
+- **Performance**: Optimized bundle size and lazy loading
+
+## Bonus: JavaScript Quirk Explanation
+
+**Question**: Why does `('b' + 'a' + + 'a' + 'a').toLowerCase()` result in `'banana'`?
+
+**Answer**: This is a classic JavaScript type coercion example:
+```javascript
+('b' + 'a' + + 'a' + 'a').toLowerCase()
+//  'b' + 'a' = 'ba' (string concatenation)
+//  '+ + 'a' = NaN (unary plus converts 'a' to number, resulting in NaN)
+//  'ba' + NaN = 'baNaN' (NaN is converted to string 'NaN')
+//  ''baNaN' + 'a' = 'baNaNa' (string concatenation)
+//  .toLowerCase() = 'banana' (converts to lowercase)
+```
+
+The key is the unary plus operator (+) before the second `'a'` which converts it to `NaN`.
+

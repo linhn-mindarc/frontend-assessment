@@ -1,0 +1,92 @@
+/* Exercise1 Component Styles */
+.hero-section {
+  @apply relative mb-4 overflow-hidden;
+
+  &::before {
+    @apply content-[""] absolute top-0 left-0 right-0 bottom-0 bg-black opacity-30;
+    
+  }
+
+  &__banner {
+    @apply w-full h-[600px] object-cover block;
+  }
+
+  &__content {
+    @apply w-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white z-10;
+  }
+
+  &__title {
+    @apply text-[74px] font-bold my-8;
+    
+  }
+
+  &__description {
+    @apply text-2xl tracking-widest;
+  }
+}
+
+.content-section {
+    @apply py-[20px] m-auto;
+}
+
+.content-grid {
+	@apply grid gap-10 justify-center grid-cols-3 mb-12;
+}
+
+.content-card {
+  @apply flex flex-col justify-between;
+	@apply bg-white rounded-lg overflow-hidden border border-gray-200 shadow-sm transition-all duration-300;
+	
+  &:hover {
+    @apply -translate-y-1 shadow-xl;
+  }
+
+  &__image {
+    @apply w-full h-[212px] object-cover rounded-lg;
+  }
+
+  &__body {
+    @apply px-[20px] pt-[20px];
+  }
+  &__description {
+    @apply pt-[20px] text-gray-600  leading-[24px] text-center;
+
+  }
+
+	&__footer {
+		@apply pt-[15px] pb-[20px] flex justify-center items-center;
+	}
+
+	&__link {
+		@apply px-[18px] py-[6px] rounded-[20px] border-[3px] border-primary-600 text-primary-600 font-bold uppercase no-underline tracking-widest transition-colors duration-300;
+
+		&:hover {
+			@apply text-white bg-primary-800;
+		}
+	}
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .hero-section {
+		&__banner {
+			@apply w-full h-[375px] object-cover block;
+		}
+
+    &__content {
+      @apply px-2;
+    }
+
+    &__title {
+      @apply text-[50px] leading-[70px] my-0;
+    }
+
+    &__description {
+      @apply text-[25px] leading-[35px];
+    }
+  }
+
+  .content-grid {
+		@apply grid-cols-1 gap-[35px];
+  }
+}
