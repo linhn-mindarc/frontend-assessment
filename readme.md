@@ -67,7 +67,7 @@ npm run preview
 - **Accessibility**: Semantic HTML and keyboard navigation
 - **Performance**: Optimized bundle size and lazy loading
 
-## Bonus: JavaScript Quirk Explanation
+## Bonus
 
 **Question**: Why does `('b' + 'a' + + 'a' + 'a').toLowerCase()` result in `'banana'`?
 
